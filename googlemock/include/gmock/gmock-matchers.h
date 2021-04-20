@@ -3144,7 +3144,7 @@ class QuantifierMatcherImpl : public MatcherInterface<Container> {
                            MatchResultListener* listener) const {
     StlContainerReference stl_container = View::ConstReference(container);
     size_t i = 0;
-    for (typename StlContainer::const_iterator it = stl_container.begin();
+    for (auto it = stl_container.begin();
          it != stl_container.end(); ++it, ++i) {
       StringMatchResultListener inner_listener;
       const bool matches = inner_matcher_.MatchAndExplain(*it, &inner_listener);
@@ -3538,7 +3538,7 @@ class ElementsAreMatcherImpl : public MatcherInterface<Container> {
     // explanations[i] is the explanation of the element at index i.
     ::std::vector<std::string> explanations(count());
     StlContainerReference stl_container = View::ConstReference(container);
-    typename StlContainer::const_iterator it = stl_container.begin();
+    auto it = stl_container.begin();
     size_t exam_pos = 0;
     bool mismatch_found = false;  // Have we found a mismatched element yet?
 
