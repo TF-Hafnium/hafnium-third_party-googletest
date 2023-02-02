@@ -34,11 +34,7 @@ source_set("gtest") {
 source_set("gtest_main") {
   testonly = true
 
-  sources = [
-    "googlemock/src/gmock_main.cc",
-  ]
+  sources = [ "googlemock/src/gmock_main.cc" ]
 
-  deps = [
-    ":gtest",
-  ]
+  deps = [ ":gtest" ]
 }
